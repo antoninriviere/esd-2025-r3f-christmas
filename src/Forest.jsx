@@ -34,7 +34,7 @@ export default function Forest() {
           (Math.random() - 0.5) * 25
         ]
       } while (
-        Math.sqrt(position[0] ** 2 + position[2] ** 2) < 5 // circle in center to avoid
+        Math.sqrt(position[0] ** 2 + position[2] ** 2) < 8 // circle in center to avoid
       )
 
       treesArray.push({ isPine, scale, position })

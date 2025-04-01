@@ -3,9 +3,13 @@ import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import { Stars } from '@react-three/drei'
+import { Physics, RigidBody } from '@react-three/rapier'
+
+
 import Forest from './Forest.jsx'
 import ChristmasTree from './ChristmasTree.jsx'
 import Lights from './Lights.jsx'
+import Presents from './Presents.jsx'
 
 export default function Experience() {
 
@@ -24,11 +28,16 @@ export default function Experience() {
         />
         <Forest />
         <ChristmasTree />
-        <mesh
-            position-y={ - 1 }
-        >
-            <boxGeometry args={[20, 0.5, 20]}/>
-            <meshStandardMaterial color="#f2f5ff" side={THREE.DoubleSide} />
-        </mesh>
+        <Physics>
+            <Presents />
+            <RigidBody type='fixed' restitution={0.2}>
+                <mesh
+                    position-y={ - 1 }
+                >
+                    <boxGeometry args={[30, 0.5, 30]}/>
+                    <meshStandardMaterial color="#f2f5ff" side={THREE.DoubleSide} />
+                </mesh>
+            </RigidBody>
+        </Physics>
     </>
 }
