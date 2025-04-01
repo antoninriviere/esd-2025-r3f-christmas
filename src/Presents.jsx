@@ -7,8 +7,19 @@ export default function Presents() {
     const present3 = useGLTF('./models/present-3.glb')
 
     return <>
-        <Clone object={present1.scene} position={[3, 2, 1]} />
-        <Clone object={present2.scene} position={[0, 3, -2]} />
-        <Clone object={present3.scene} position={[-1, 3, -2]} />
+        <RigidBody restitution={1}>
+            <Clone object={present1.scene} position={[3, 6, 1]} />
+            {/* <CuboidCollider args={[0.5, 0.5, 0.5]} position={[0, -0.5, 0]} mass={1} /> */}
+        </RigidBody>
+
+        <RigidBody restitution={1}>
+            <Clone object={present2.scene} position={[0, 6, -4]} />
+            {/* <CuboidCollider args={[0.5, 0.5, 0.5]} position={[0, -0.5, 0]} mass={1} /> */}
+        </RigidBody>
+
+        <RigidBody restitution={1}>
+            <Clone object={present3.scene} position={[-3, 6, -2]} />
+            {/* <CuboidCollider args={[0.5, 0.5, 0.5]} position={[0, -0.5, 0]} mass={1} /> */}
+        </RigidBody>
     </>
 }
