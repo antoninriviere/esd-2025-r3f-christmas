@@ -5,7 +5,7 @@ export default function Forest() {
     const snowPine = useGLTF('./models/snow-pine.glb')
     const pine = useGLTF('./models/pine.glb')
 
-    const nbTrees = 75
+    const nbTrees = 200
 
     const models = useMemo(() => ({
         snowPine: snowPine.scene,

@@ -18,7 +18,7 @@ const App = () => {
                 fov: 45,
                 near: 0.1,
                 far: 200,
-                position: [ 0, 3, 6 ]
+                position: [ 0, 3, 15 ]
             } }
             onCreated={ created }
         >

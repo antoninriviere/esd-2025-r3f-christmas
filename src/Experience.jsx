@@ -4,6 +4,8 @@ import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import { Stars } from '@react-three/drei'
 import Forest from './Forest.jsx'
+import ChristmasTree from './ChristmasTree.jsx'
+import Lights from './Lights.jsx'
 
 export default function Experience() {
 
@@ -11,8 +13,7 @@ export default function Experience() {
     })
 
     return <>
-    <directionalLight position={[1, 2, 3]} intensity={4.5} />
-        <ambientLight intensity={1.5} />
+        <Lights />
         <Stars
             radius={ 10 }
             count={ 2000 }
@@ -22,6 +23,7 @@ export default function Experience() {
             fade={ true }
         />
         <Forest />
+        <ChristmasTree />
         <mesh
             position-y={ - 1 }
         >
